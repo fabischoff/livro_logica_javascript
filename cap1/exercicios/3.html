@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title> Exercício 3 </title>
+    </head>
+    <body>
+        <script>
+            //Elaborar um programa para uma loja, o qual leia o preço de um produto e informe as opões de pagamento da loja. Calcule e informa o valor para pagamento à vista com 10%
+            //de desconto e o valor em 3x
+            
+            var precoProduto = Number(prompt("Digite o preço do produto:"));
+            var precoAVista = precoProduto - (precoProduto * 0.10) ;
+            var parcelado = precoProduto / 3;
+            
+            alert("Preço à vista: " + precoAVista + "\nPreço em 3x: " + parcelado.toFixed(2));
+            
+        </script>
+    </body>
+</html>
