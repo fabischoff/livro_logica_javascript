@@ -1,11 +1,15 @@
 function gerarEstrela() {
   var inNumero = document.getElementById("inNumero");
   var outResposta = document.getElementById("outResposta");
-  var numero = inNumero.value;
+  var numero = Number(inNumero.value);
   var estrelas = "";
 
   for (var i = 1; i <= numero; i++) {
-    estrelas += estrelas + "*_";
+    if (i % 2 == 0) {
+      estrelas += "-";
+    }else {
+      estrelas += "*";
+    }
   }
 
   outResposta.textContent = estrelas;
