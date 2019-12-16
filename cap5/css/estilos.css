@@ -1,0 +1,23 @@
+body {
+  background-color: blanchedalmond;
+}
+img.alta {
+  float: left;
+  height: 420px;
+  widows: 300px;
+}
+h1 {
+  border-bottom-style: inset;
+}
+.fonteAzul {
+  color: blue;
+}
+.oculta {
+  display: none;
+}
+.exibe {
+    display: inline;
+}
+.italico {
+    font-style: italic;
+}
