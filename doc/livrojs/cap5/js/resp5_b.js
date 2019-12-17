@@ -29,7 +29,6 @@ function adicionarNumero() {
 var btAdicionar = document.getElementById("btAdicionar");
 btAdicionar.addEventListener("click", adicionarNumero);
 
-
 function verificarOrdem() {
   // verifica se vetor numeros está vazio 
   if (numeros.length == 0) {
