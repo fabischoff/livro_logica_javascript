@@ -1,14 +1,11 @@
-// var anuncio = prompt("Anúncio: ");
-// var anuncio = "Vende-se apto no centro, nas proximidades da praça."
-// var tam = anuncio.length;
-// var numPalavras = 0;
-// for (var i = 0; i < anuncio.length; i++){
-//     if(anuncio.charAt(i) == " "){
-//         numPalavras++;
-//     }
-// }
-// console.log("Anúncio: " + anuncio + "\nNº Palavras: " + (numPalavras + 1));
+var senha = "ABACAD";
+var senha1 = senha.replace("A", "Z");
+var senha2 = senha.replace(/A/g, "Z");
 
-var cidade = "Porto Alegre";
-console.log(cidade.length);
-console.log(cidade.charAt(0));
+
+
+
+console.log(senha);
+console.log(senha1);
+console.log(senha2);
+

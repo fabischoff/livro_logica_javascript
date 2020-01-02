@@ -2,7 +2,7 @@ function montarDica () {
     var inFruta = document.getElementById("inFruta");
     var outDica = document.getElementById("outDica");
 
-    var fruta = inFruta.value;
+    var fruta = inFruta.value.toUpperCase();
     
 
     if(fruta == ""){
@@ -26,7 +26,7 @@ function montarDica () {
         estrelas +=  "*";
     }
 
-    outDica.textContent = resposta;
+    outDica.textContent = " " + resposta;
     console.log(estrelas);
     inFruta.value = estrelas;
 }
