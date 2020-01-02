@@ -1,11 +1,10 @@
-var senha = "ABACAD";
-var senha1 = senha.replace("A", "Z");
-var senha2 = senha.replace(/A/g, "Z");
+var app = "App Controle Financeiro";
+var app2 = app.replace(" ", "");
+var app3 = app.replace(/ /g, "");
+var app4 = app.replace(/ /g, "").toLowerCase();
 
-
-
-
-console.log(senha);
-console.log(senha1);
-console.log(senha2);
+console.log(app);
+console.log(app2);
+console.log(app3);
+console.log(app4);
 
