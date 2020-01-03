@@ -1,22 +1,32 @@
+function verificarPalindromo() {
 
-var parcelas = 6;
+    var inPalindromo = document.getElementById("inPalindromo");
+    var outSaida = document.getElementById("outSaida");
+    var palindroOriginal = inPalindromo.value;
 
-var lista = "";
-var dia, mes, ano, diaZero, mesZero;
 
-var data = new Date();
+    var palindromo = palindroOriginal.replace(/ /g, "").toLowerCase();;
 
-for(var i = 0; i <= parcelas; i++){
-    data.setMonth(data.getMonth()+ 1);
-    dia = data.getDate();
-    mes = data.getMonth() + 1;
-    ano = data.getFullYear();
+    var copiaPalindromo = palindromo.slice();
+    console.log("TCL: verificarPalindromo -> palindromo", palindromo)
+    console.log("TCL: verificarPalindromo -> copiaPalindromo", copiaPalindromo)
 
-    diaZero = dia < 10 ? "0" + dia : dia;
-    mesZero = mes < 10 ? "0" + mes : mes;
-    
-    lista += i + " Parcela: " + diaZero + "/" + mesZero + "/" + ano + "\n";
+    var i, j = 0;
+    var pal = true;
+
+    for (i = 0, j = palindromo.length - 1; i < palindromo.length; i++, j--) {
+        if (palindromo.charAt(i) != copiaPalindromo.charAt(j)) {
+            var pal = false;        
+        } 
+    }
+
+    if(pal) outSaida.textContent = palindroOriginal + " é um Palíndromo.";
+
+
+
+
 
 }
 
-console.log(lista);
+var btVerificar = document.getElementById("btVerificar");
+btVerificar.addEventListener("click", verificarPalindromo);
