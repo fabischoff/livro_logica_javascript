@@ -6,11 +6,15 @@
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "url": "http://www.livro-logica-javascript.com.br/",
+            "url": "http://localhost/livro_logica_javascript/cap7/",
             "webRoot": "${workspaceFolder}",
             "pathMappings": [
                 {
-                    "url": "http://www.livro-logica-javascript.com.br",
+                    "url": "http://localhost",
+                    "path": "/var/www/html"
+                },
+                {
+                    "url": "http://localhost/livro_logica_javascript/cap7/",
                     "path": "${workspaceFolder}"
                 }
             ]

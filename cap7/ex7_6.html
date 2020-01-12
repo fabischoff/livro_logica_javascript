@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <title>Exercicio 7_6</title>
+</head>
+
+<body>
+    <img src="img/ex7_6.jpg" class="normal" alt="frutas" />
+    <h1>Pizzaria Avenida - Controle de Pedidos</h1>
+    <p>
+        Item do Pedido:
+        <input type="radio" name="produto" id="rbPizza" checked autofocus>Pizza
+        <input type="radio" name="produto" id="rbBebida">Bebida
+        <span>Item</span>
+        <select name="inPizza" id="inPizza">
+            <option value="media">Pizza Média</option>
+            <option value="grande">Pizza Grande</option>
+            <option value="familia">Pizza Família</option>
+        </select>  
+        <select name="inBebida" id="inBebida" class="oculta">
+            <option value="refri">Refrigerante</option>
+            <option value="suco">Jarra de Suco</option>
+            <option value="agua">Água Mineral</option>
+        </select>
+    </p>
+    <p>Detalhes do Item:
+        <input type="text" id="inDetalhes" class="Detalhes">
+        <input type="button" value="Adicionar" id="btAdicionar">
+    </p>    
+
+    <pre id="outPedido"> </pre>
+
+    <script src="js/ex7_6.js"></script>
+</body>
+
+</html>

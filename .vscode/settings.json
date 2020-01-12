@@ -1,3 +1,5 @@
 {
-    "debug.node.autoAttach": "off"
+    "debug.node.autoAttach": "off",
+    "standard.enable": false,
+  
 }
