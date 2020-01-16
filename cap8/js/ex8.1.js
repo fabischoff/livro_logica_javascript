@@ -3,37 +3,48 @@ function trocarClube() {
     var imgClube = document.getElementById("imgClube");
     var divTitulo = document.getElementById("divTitulo");
 
-    var clube; // define variável que irá receber o nome do clube
+    // var clube; // define variável que irá receber o nome do clube
+    var clubes = ["Brasil", "Pelotas", "Farroupilha"];
 
-    // verifica qual radiobutton está selecionado
-    if (rbBrasil.checked) {
-        clube = "Brasil";
-    } else if (rbPelotas.checked) {
-        clube = "Pelotas";
-    } else {
-        clube = "Farroupilha";
+    for (var i = 0; i < clubes.length; i++) {
+        if (inputSradio[i].checked) {
+            var selecao = i;
+            break;
+        }
     }
 
-    // define as classes de divTitulo: row e cores do clube
-    divTitulo.className = "row cores" + clube;
+    if (selecao <= clubes.length - 1) {
+        // define as classes de divTitulo: row e cores do clube
+        divTitulo.className = "row cores" + clubes[selecao];
+        // modifica a imagem de acordo com a seleção do cliente
+        imgClube.src = "img/" + clubes[selecao].toLowerCase() + ".png";
+        imgClube.className = "exibe"; // exibe a imagem
+        imgClube.alt = "Símbolo do " + clubes[selecao]; // modifica atributo alt
 
-    // modifica a imagem de acordo com a seleção do cliente
-    imgClube.src = "img/" + clube.toLowerCase() + ".png";
-    imgClube.className = "exibe"; // exibe a imagem
-    imgClube.alt = "Símbolo do " + clube; // modifica atributo alt
-
-    //salva no navegador a escolha do cliente
-    localStorage.setItem("clube", clube)
+        //salva no navegador a escolha do cliente
+        localStorage.setItem("clube", clubes[selecao])
+    } else {
+        divTitulo.className = "row";
+        imgClube.className = "oculta";
+        imgClube.alt = "";
+        localStorage.removeItem("clube");
+    }
 }
+
 // captura os elementos do radiobutton
 var rbBrasil = document.getElementById("rbBrasil");
 var rbPelotas = document.getElementById("rbPelotas");
 var rbFarroupilha = document.getElementById("rbFarroupilha");
 
-// associa ao evento change a function trocarClube
-rbBrasil.addEventListener("change", trocarClube);
-rbPelotas.addEventListener("change", trocarClube);
-rbFarroupilha.addEventListener("change", trocarClube);
+// // associa ao evento change a function trocarClube
+// rbBrasil.addEventListener("change", trocarClube);
+// rbPelotas.addEventListener("change", trocarClube);
+// rbFarroupilha.addEventListener("change", trocarClube);
+
+var inputSradio = document.getElementsByTagName("input");
+for (var i = 0; i < inputSradio.length; i++) {
+    inputSradio[i].addEventListener("change", trocarClube);
+}
 
 function verificarClube() {
 
@@ -44,11 +55,11 @@ function verificarClube() {
 
         // conforme o clube, marca um dos elementos do input type radio
         if (clube == "Brasil") {
-            rbBrasil.checked = true;
+            inputSradio[0].checked = true;
         } else if (clube == "Pelotas") {
-            rbPelotas.checked = true;
+            inputSradio[1].checked = true;
         } else {
-            rbFarroupilha.checked = true;
+            inputSradio[2].checked = true;
         }
 
         trocarClube(); // chama a function que troca a imagem e cores

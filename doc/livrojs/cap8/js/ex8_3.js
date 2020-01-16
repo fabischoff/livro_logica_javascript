@@ -3,14 +3,14 @@ function incluirAposta() {
   var inNome = document.getElementById("inNome");
   var inPeso = document.getElementById("inPeso");
 
-  var nome = inNome.value;          // conteúdo do campo nome
-  var peso = Number(inPeso.value);  // conteúdo do campo peso (em número)
+  var nome = inNome.value; // conteúdo do campo nome
+  var peso = Number(inPeso.value); // conteúdo do campo peso (em número)
 
   // se vazios ou Not-a-Number
   if (nome == "" || peso == 0 || isNaN(peso)) {
-    alert("Informe nome e peso da aposta");  // exibe alerta
-    inNome.focus();                          // joga cursor em nome
-    return;                                  // abandona execução da funtion
+    alert("Informe nome e peso da aposta"); // exibe alerta
+    inNome.focus(); // joga cursor em nome
+    return; // abandona execução da funtion
   }
 
   // chama function que verifica se peso já foi apostado
@@ -29,16 +29,16 @@ function incluirAposta() {
     // salva os dados em localStorage
     localStorage.setItem("melanciaNome", melanciaNome);
     localStorage.setItem("melanciaPeso", melanciaPeso);
-  } else {              // senão, é a primeira aposta (não tem ";"")
-    localStorage.setItem("melanciaNome", nome);   // salva os dados
+  } else { // senão, é a primeira aposta (não tem ";"")
+    localStorage.setItem("melanciaNome", nome); // salva os dados
     localStorage.setItem("melanciaPeso", peso);
   }
 
-  mostrarApostas();    // chama function que mostra as apostas já salvas
+  mostrarApostas(); // chama function que mostra as apostas já salvas
 
-  inNome.value = "";   // limpa os campos de formulário
+  inNome.value = ""; // limpa os campos de formulário
   inPeso.value = "";
-  inNome.focus();      // joga o foco (cursor) no campo inNome
+  inNome.focus(); // joga o foco (cursor) no campo inNome
 }
 // cria referência ao botão e associa a ocorrência do evento click à function
 var btApostar = document.getElementById("btApostar");
@@ -46,7 +46,7 @@ btApostar.addEventListener("click", incluirAposta);
 
 function verApostaExiste(peso) {
 
-  var existe = false;     // valor inicial é false
+  var existe = false; // valor inicial é false
 
   // se existe algum dado salvo em localStorage...
   if (localStorage.getItem("melanciaPeso")) {
@@ -56,11 +56,11 @@ function verApostaExiste(peso) {
     // verifica se existe com indexOf()
     // O peso deve ser convertido em string, pois o vetor contém strings
     if (pesos.indexOf(peso.toString()) >= 0) {
-      existe = true;          // apenas neste caso troca o valor do "flag"
+      existe = true; // apenas neste caso troca o valor do "flag"
     }
   }
 
-  return existe;    // retorna true ou false
+  return existe; // retorna true ou false
 }
 
 function mostrarApostas() {
@@ -72,7 +72,7 @@ function mostrarApostas() {
   if (!localStorage.getItem("melanciaNome")) {
     // limpa o espaço de exibição das apostas (para quando "Limpar Apostas")
     outApostas.textContent = "";
-    return;                      // retorna (não executa os comandos abaixo)
+    return; // retorna (não executa os comandos abaixo)
   }
 
   // obtém o conteúdo das variáveis salvas no localStorage, separando-as
@@ -80,7 +80,7 @@ function mostrarApostas() {
   var nomes = localStorage.getItem("melanciaNome").split(";");
   var pesos = localStorage.getItem("melanciaPeso").split(";");
 
-  var linhas = "";   // irá acumular as linhas a serem exibidas
+  var linhas = ""; // irá acumular as linhas a serem exibidas
 
   // repetição para percorrer todos os elementos do vetor
   for (var i = 0; i < nomes.length; i++) {
@@ -99,7 +99,7 @@ function verificarVencedor() {
   // se não há apostas armazenadas em localStorage
   if (!localStorage.getItem("melanciaNome")) {
     alert("Não há apostas cadastradas");
-    return;                      // retorna (não executa os comandos abaixo)
+    return; // retorna (não executa os comandos abaixo)
   }
 
   // solicita o peso correto da melancia
@@ -118,17 +118,17 @@ function verificarVencedor() {
   var vencedorNome = nomes[0];
   var vencedorPeso = Number(pesos[0]);
 
-  // percorre as apostas
+  // valor inicial para vencedor é o da primeira aposta
   for (var i = 1; i < nomes.length; i++) {
 
     // calcula a diferença de peso do "vencedor" e da aposta atual
-    difVencedor = Math.abs(vencedorPeso - pesoCorreto);    
+    difVencedor = Math.abs(vencedorPeso - pesoCorreto);
     difAposta = Math.abs(Number(pesos[i]) - pesoCorreto);
 
     // se a diferença da aposta atual (no for) for menor que a do "vencedor"
     if (difAposta < difVencedor) {
-      vencedorNome = nomes[i];            // troca o "vencedor" 
-      vencedorPeso = Number(pesos[i]);    // para este elemento
+      vencedorNome = nomes[i]; // troca o "vencedor" 
+      vencedorPeso = Number(pesos[i]); // para este elemento
     }
 
   }
@@ -140,15 +140,16 @@ function verificarVencedor() {
   mensagem += "\nAposta: " + vencedorPeso + "gr";
   alert(mensagem);
 }
+
 var btVencedor = document.getElementById("btVencedor");
 btVencedor.addEventListener("click", verificarVencedor);
 
 function limparApostas() {
   // solicita confirmação para excluir as apostas
   if (confirm("Confirma exclusão de todas as apostas?")) {
-    localStorage.removeItem("melanciaNome");   // remove as variáveis salvas
-    localStorage.removeItem("melanciaPeso");   // em localStorage
-    mostrarApostas();                          // exibe a listagem vazia
+    localStorage.removeItem("melanciaNome"); // remove as variáveis salvas
+    localStorage.removeItem("melanciaPeso"); // em localStorage
+    mostrarApostas(); // exibe a listagem vazia
   }
 }
 var btLimpar = document.getElementById("btLimpar");
