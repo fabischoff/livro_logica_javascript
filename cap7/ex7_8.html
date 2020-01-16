@@ -17,16 +17,19 @@
     </p>
     <p>
         Possue Convênio:
-        <input type="radio" name="convenio" id="rbSim" >Sim
-        <input type="radio" name="convenio" id="rbNao" checked autofocus>Não
+        <form>
+            <input type="radio" name="convenio" value="sim" id="rbSim">Sim
+            <input type="radio" name="convenio" value="nao" id="rbNao" checked>Não
+            
+        </form>
     </p>
     <p id="convenio" class="oculta">Convênio:
         <select name="inConvenio" id="inConvenio">
             <option value="1">Amigo dos Animais</option>
             <option value="2">Saúde Animal</option>
-            
-        </select>  
-       
+
+        </select>
+
     </p>
     <p>
         <input type="button" value="Calcular Desconto" id="btCalcularDesconto">
@@ -34,7 +37,7 @@
 
     <pre id="outDesconto"> </pre>
     <pre id="outValorAPagar"> </pre>
-    
+
 
     <script src="js/ex7_8.js"></script>
 </body>

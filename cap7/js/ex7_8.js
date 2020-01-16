@@ -45,8 +45,8 @@ function calcularValorVacina() {
 }
 
 function limparCampos() {
-    outDesconto.textContent = " teste";
-    outValorAPagar.textContent = " teste";
+    outDesconto.textContent = "";
+    outValorAPagar.textContent = "";
     
 }
 var btCalcularDesconto = document.getElementById("btCalcularDesconto");
@@ -58,5 +58,5 @@ rbNao.addEventListener("change", calcularValorVacina);
 rbSim.addEventListener("change", verificarConvenio);
 rbNao.addEventListener("change", verificarConvenio);
 
-inConvenio.addEventListener("select",calcularDesconto)
+inConvenio.addEventListener("change",calcularValorVacina)
 
