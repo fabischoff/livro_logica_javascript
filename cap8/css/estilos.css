@@ -29,3 +29,15 @@ pre {
     color: green;
     background-color: white;
 }
+
+#outServicoVeiculo{
+    margin-left: 120px;
+    background-color: blueviolet;
+}
+
+.conteiner-fluid {
+    margin-right: 50px;
+}
+#servicosPendentes{
+    text-align: right;
+}

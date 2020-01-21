@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css" />
+    <title>Exercicio - Lista de Compras</title>
+</head>
+
+<body>
+    <div class="conteiner-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="img/exerc.jpg" alt="Melancia">
+            </div>
+            <div class="col-sm-8">
+                <h1>Compras da Semana</h1>
+                <p>
+                    <label for="inProduto">Produto:</label>
+                    <input type="text" id="inProduto" class="form-control">
+                </p>
+                <p>
+                    <input type="button" value="Adicionar" id="btAdicionar" class="btn btn-primary">
+                    <input type="button" value="Limpar" id="btLimpar" class="btn btn-danger">
+                </p>
+                <pre id="outListaProdutos" class="alert-dark"></pre>
+            </div>
+        </div>
+    </div>
+    <script src="js/comprasSemanas.js"></script>
+</body>
+
+</html>

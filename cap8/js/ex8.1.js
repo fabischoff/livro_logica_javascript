@@ -46,6 +46,21 @@ for (var i = 0; i < inputSradio.length; i++) {
     inputSradio[i].addEventListener("change", trocarClube);
 }
 
+function verificarVisita(){
+    var contadorVisita = document.getElementById("contadorVisita");
+    var numeroVisita = 0
+    if(localStorage.getItem("visita")){
+        numeroVisita = Number(localStorage.getItem("visita"));
+        var mensagem = "Que bom que você voltou! Esta é a sua visita de número " + Number(numeroVisita) + " ao nosso site!!";
+    }else{
+        mensagem = "Muito bem-vindo! Esta é a sua primeira visita ao nosso site!!"
+    }
+    
+    numeroVisita += 1;
+    localStorage.setItem("visita", numeroVisita)
+    contadorVisita.textContent = mensagem;
+}
+
 function verificarClube() {
 
     // se já estiver salvo algum clube
@@ -67,3 +82,4 @@ function verificarClube() {
 }
 // chama function que verifica se cliente já selecionou clube anteriormente
 verificarClube();
+verificarVisita();
