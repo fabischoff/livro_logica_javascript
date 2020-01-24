@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css" />
+    <title>Exemplo 9.5</title>
+</head>
+
+<body>
+    <div class="conteiner-fluid">
+        <div class="row">
+            <div class="col-sm-4"><img src="img/exerc.jpg" alt="exercicios" class="imgProg"></div>
+
+            <div class="col-sm-8" id="divClube">
+                <h1>Copa do Brasil - Classificados</h1>
+                <p>
+                    <label for="inClube">Clube:</label>
+                    <input type="text" class="form-control" id="inClube" autofocus>
+                </p>
+                <p>
+                    <input type="button" class="btn btn-primary" value="Adicionar" id="btAdicionar">
+                    <input type="button" class="btn btn-success" value="Montar Tabela de Jogos" id="btMontar">
+                    <input type="button" class="btn btn-dark" value="Novos Clubes" id="btAdicionar">
+                </P>
+
+                <table class="table table-striped" id="tbCampeonato">
+                    <tr>
+                        <th>Tabela de Jogos</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/ex9_6.js"></script>
+</body>
+
+</html>
